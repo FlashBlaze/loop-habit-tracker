@@ -1,3 +1,8 @@
 import React from 'react';
+import Layout from '../components/Layout/Layout';
 
-export default () => <div>Hello world!</div>;
+const Index = () => {
+  return <Layout>Loop habit tracker</Layout>;
+};
+
+export default Index;
