@@ -12,7 +12,7 @@ const Header = () => {
         </Link>
       </h1>
       <nav>
-        <Link to="/" className={headerStyles.downloadText}>
+        <Link to="#download" className={headerStyles.downloadText}>
           Download
         </Link>
       </nav>

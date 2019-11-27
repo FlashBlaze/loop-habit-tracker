@@ -1,0 +1,31 @@
+.section-one {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+}
+
+.section-two {
+  height: 100vh;
+}
+
+.section-three {
+  height: 100vh;
+}
+
+.section-four {
+  height: 100vh;
+}
+
+.link {
+  text-decoration: none;
+  color: #333333;
+}
+
+.link:hover {
+  color: #555555;
+}
+
+.info {
+  line-height: 2rem;
+}
