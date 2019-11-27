@@ -8,4 +8,5 @@ module.exports = {
       },
     },
   ],
+  pathPrefix: '/loop-habit-tracker',
 };
