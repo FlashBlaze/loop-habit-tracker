@@ -1,17 +1,18 @@
 .header {
-  padding: 1rem 0 3rem;
+  background-color: #201e1f;
+  padding: 1rem 5rem 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  box-shadow: 0rem 0.5rem 1.5rem #aaaaaa;
 }
 
 .title {
-  color: #000000;
-  font-size: 2rem;
+  color: #ffffff;
   text-decoration: none;
 }
 
 .download-text {
-  color: #333333;
-  font-size: 1rem;
+  color: #ffffff;
   text-decoration: none;
 }
