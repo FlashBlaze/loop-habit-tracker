@@ -3,11 +3,11 @@ import Typography from 'typography';
 const typography = new Typography({
   baseFontSize: '18px',
   baseLineHeight: 1.45,
-  headerFontFamily: ['Open Sans', 'sans-serif'],
+  headerFontFamily: ['Oxygen', 'sans-serif'],
   bodyFontFamily: ['Roboto', 'sans-serif'],
   googleFonts: [
     {
-      name: 'Open Sans',
+      name: 'Oxygen',
       styles: ['400', '700'],
     },
     {

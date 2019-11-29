@@ -86,7 +86,7 @@
   margin: 1rem;
   text-align: justify;
   max-width: 500px;
-  box-shadow: 0 1rem 1rem #ff5c26;
+  box-shadow: 0 1rem 1rem #ff4a0e;
   transition: box-shadow 0.3s ease-in-out;
 }
 
@@ -96,7 +96,35 @@
   margin: 1rem;
   text-align: justify;
   max-width: 500px;
-  box-shadow: 0 0.5rem 0.5rem #ff5c26;
+  box-shadow: 0 0.5rem 0.5rem #ff4a0e;
+}
+
+.section-four {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem;
+  height: 50vh;
+}
+
+.section-four-links {
+  display: flex;
+  margin: 2rem;
+  align-items: center;
+  justify-content: center;
+
+  @media screen and (max-width: 360px) {
+    flex-direction: column;
+    height: 250px;
+  }
+
+  @media screen and (max-width: 720px) {
+    flex-direction: column;
+  }
+}
+
+.section-four-link {
+  margin: 1rem;
 }
 
 .image-sequence {

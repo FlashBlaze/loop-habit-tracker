@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
+import GitHubButton from 'react-github-btn';
 
 import infoStyles from './styles.module.scss';
 
@@ -50,15 +51,15 @@ const Info = () => {
         >
           <Carousel {...carouselSettings} className={infoStyles.imageSequence}>
             <div>
-              <img src="/uhabits1.png" />
+              <img src="/uhabits1.png" alt="Screenshot 1 of app" />
               <p className="legend">Screenshot 1</p>
             </div>
             <div>
-              <img src="/uhabits2.png" />
+              <img src="/uhabits2.png" alt="Screenshot 2 of app" />
               <p className="legend2">Screenshot 2</p>
             </div>
             <div>
-              <img src="/uhabits3.png" />
+              <img src="/uhabits3.png" alt="Screenshot 3 of app" />
               <p className="legend3">Screenshot 3</p>
             </div>
           </Carousel>
@@ -69,27 +70,27 @@ const Info = () => {
         <div>
           <Carousel {...carouselSettings} className={infoStyles.imageSequence}>
             <div>
-              <img src="/uhabits1.png" />
+              <img src="/uhabits1.png" alt="Screenshot 1 of app" />
               <p className="legend">Screenshot 1</p>
             </div>
             <div>
-              <img src="/uhabits2.png" />
+              <img src="/uhabits2.png" alt="Screenshot 2 of app" />
               <p className="legend2">Screenshot 2</p>
             </div>
             <div>
-              <img src="/uhabits3.png" />
+              <img src="/uhabits3.png" alt="Screenshot 3 of app" />
               <p className="legend3">Screenshot 3</p>
             </div>
             <div>
-              <img src="/uhabits4.png" />
+              <img src="/uhabits4.png" alt="Screenshot 4 of app" />
               <p className="legend4">Screenshot 4</p>
             </div>
             <div>
-              <img src="/uhabits5.png" />
+              <img src="/uhabits5.png" alt="Screenshot 5 of app" />
               <p className="legend5">Screenshot 5</p>
             </div>
             <div>
-              <img src="/uhabits6.png" />
+              <img src="/uhabits6.png" alt="Screenshot 6 of app" />
               <p className="legend6">Screenshot 6</p>
             </div>
           </Carousel>
@@ -159,6 +160,45 @@ const Info = () => {
             intrusive permissions in this app, and there will never be. Complete
             source code is on GitHub.
           </p>
+        </div>
+      </div>
+
+      <div className={infoStyles.sectionFour}>
+        <h1>Download</h1>
+        <div className={infoStyles.sectionFourLinks}>
+          <a
+            href="https://play.google.com/store/apps/details?id=org.isoron.uhabits&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-AC-global-none-all-co-pr-py-PartBadges-Oct1515-1"
+            alt="Play Store icon"
+            className={infoStyles.sectionFourLink}
+          >
+            <img
+              alt="Get it on Google Play"
+              src="https://play.google.com/intl/en_us/badges/images/apps/en-play-badge-border.png"
+              width="200px"
+            />
+          </a>
+
+          <a
+            href="http://f-droid.org/app/org.isoron.uhabits"
+            alt="F-Droid icon"
+            className={infoStyles.sectionFourLink}
+          >
+            <img
+              alt="Get it on F-Droid"
+              src="http://i.imgur.com/baSPE7X.png"
+              width="200px"
+            />
+          </a>
+          <div className={infoStyles.sectionFourLink}>
+            <GitHubButton
+              href="https://github.com/iSoron/uhabits"
+              data-size="large"
+              data-show-count="true"
+              aria-label="Star iSoron/uhabits on GitHub"
+            >
+              Star
+            </GitHubButton>
+          </div>
         </div>
       </div>
     </div>
