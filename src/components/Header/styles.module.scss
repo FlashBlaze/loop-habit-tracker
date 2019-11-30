@@ -1,18 +1,25 @@
 .header {
-  background-color: #201e1f;
+  background-color: #ffffff;
   padding: 1rem 5rem 0;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  box-shadow: 0rem 0.5rem 1.5rem #aaaaaa;
+  align-items: baseline;
+  z-index: 1;
+  box-shadow: 0rem 0.2rem 1rem #b4b4b4;
 }
 
 .title {
-  color: #ffffff;
+  color: #444444;
   text-decoration: none;
 }
 
 .download-text {
-  color: #ffffff;
+  color: #444444;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.download-text:hover {
+  color: #6e6e6e;
   text-decoration: none;
 }

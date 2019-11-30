@@ -58,10 +58,6 @@ const Info = () => {
               <img src="/uhabits2.png" alt="Screenshot 2 of app" />
               <p className="legend2">Screenshot 2</p>
             </div>
-            <div>
-              <img src="/uhabits3.png" alt="Screenshot 3 of app" />
-              <p className="legend3">Screenshot 3</p>
-            </div>
           </Carousel>
         </motion.div>
       </div>
@@ -70,14 +66,6 @@ const Info = () => {
         <div>
           <Carousel {...carouselSettings} className={infoStyles.imageSequence}>
             <div>
-              <img src="/uhabits1.png" alt="Screenshot 1 of app" />
-              <p className="legend">Screenshot 1</p>
-            </div>
-            <div>
-              <img src="/uhabits2.png" alt="Screenshot 2 of app" />
-              <p className="legend2">Screenshot 2</p>
-            </div>
-            <div>
               <img src="/uhabits3.png" alt="Screenshot 3 of app" />
               <p className="legend3">Screenshot 3</p>
             </div>
@@ -85,16 +73,9 @@ const Info = () => {
               <img src="/uhabits4.png" alt="Screenshot 4 of app" />
               <p className="legend4">Screenshot 4</p>
             </div>
-            <div>
-              <img src="/uhabits5.png" alt="Screenshot 5 of app" />
-              <p className="legend5">Screenshot 5</p>
-            </div>
-            <div>
-              <img src="/uhabits6.png" alt="Screenshot 6 of app" />
-              <p className="legend6">Screenshot 6</p>
-            </div>
           </Carousel>
         </div>
+
         <div>
           <div>
             <div className={infoStyles.sectionTwoInfoCard}>
@@ -136,34 +117,49 @@ const Info = () => {
       </div>
 
       <div className={infoStyles.sectionThree}>
-        <div className={infoStyles.sectionThreeInfoCard}>
-          <h4>Reminders</h4>
-          <p>
-            Create an individual reminder for each habit, at a chosen hour of
-            the day. Easily check, dismiss or snooze your habit directly from
-            the notification, without opening the app.
-          </p>
+        <div>
+          <div className={infoStyles.sectionThreeInfoCard}>
+            <h4>Reminders</h4>
+            <p>
+              Create an individual reminder for each habit, at a chosen hour of
+              the day. Easily check, dismiss or snooze your habit directly from
+              the notification, without opening the app.
+            </p>
+          </div>
+
+          <div className={infoStyles.sectionThreeInfoCard}>
+            <h4>Optimized for smartwatches</h4>
+            <p>
+              Reminders can be checked or dismissed directly from your Android
+              Wear watch.
+            </p>
+          </div>
+
+          <div className={infoStyles.sectionThreeInfoCard}>
+            <h4>Completely ad-free and open source</h4>
+            <p>
+              There are absolutely no advertisements, annoying notifications or
+              intrusive permissions in this app, and there will never be.
+              Complete source code is on GitHub.
+            </p>
+          </div>
         </div>
 
-        <div className={infoStyles.sectionThreeInfoCard}>
-          <h4>Optimized for smartwatches</h4>
-          <p>
-            Reminders can be checked or dismissed directly from your Android
-            Wear watch.
-          </p>
-        </div>
-
-        <div className={infoStyles.sectionThreeInfoCard}>
-          <h4>Completely ad-free and open source</h4>
-          <p>
-            There are absolutely no advertisements, annoying notifications or
-            intrusive permissions in this app, and there will never be. Complete
-            source code is on GitHub.
-          </p>
+        <div>
+          <Carousel {...carouselSettings} className={infoStyles.imageSequence}>
+            <div>
+              <img src="/uhabits5.png" alt="Screenshot 5 of app" />
+              <p className="legend5">Screenshot 5</p>
+            </div>
+            <div>
+              <img src="/uhabits6.png" alt="Screenshot 6 of app" />
+              <p className="legend6">Screenshot 6</p>
+            </div>
+          </Carousel>
         </div>
       </div>
 
-      <div className={infoStyles.sectionFour}>
+      <div className={infoStyles.sectionFour} id="download">
         <h1>Download</h1>
         <div className={infoStyles.sectionFourLinks}>
           <a
