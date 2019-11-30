@@ -66,7 +66,7 @@ const Info = () => {
           initial="hidden"
           animate="visible"
           variants={visibilityVariant}
-          transition={{ delay: 0.5, duration: 1.5 }}
+          transition={{ delay: 0.5, duration: 1 }}
         >
           <h1>Loop - Habit Tracker</h1>
           <h6 className={infoStyles.sectionOneInfoText}>
@@ -80,7 +80,7 @@ const Info = () => {
           initial="hidden"
           animate="visible"
           variants={visibilityVariant}
-          transition={{ delay: 2.5, duration: 1.5 }}
+          transition={{ delay: 2, duration: 1 }}
         >
           <Carousel {...carouselSettings} className={infoStyles.imageSequence}>
             <div>

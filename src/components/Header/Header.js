@@ -11,6 +11,7 @@ const Header = () => {
           Loop - Habit Tracker
         </Link>
       </h2>
+
       <nav>
         <a href="#download" className={headerStyles.downloadText}>
           Download

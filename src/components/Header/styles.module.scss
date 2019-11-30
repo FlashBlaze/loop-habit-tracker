@@ -6,6 +6,12 @@
   align-items: baseline;
   z-index: 1;
   box-shadow: 0rem 0.2rem 1rem #b4b4b4;
+
+  @media screen and (max-width: 640px) {
+    justify-content: center;
+    align-items: center;
+    padding-right: 1rem;
+  }
 }
 
 .title {
@@ -17,6 +23,9 @@
   color: #444444;
   text-decoration: none;
   transition: color 0.3s;
+  // @media screen and (max-width: 640px) {
+  //   opacity: 0;
+  // }
 }
 
 .download-text:hover {
