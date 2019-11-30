@@ -1,13 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 import GitHubButton from 'react-github-btn';
+import { InView } from 'react-intersection-observer';
 
 import infoStyles from './styles.module.scss';
 
 const Info = () => {
-  const variants = {
+  const [isDownloadVisible, setIsDownloadVisible] = useState(false);
+
+  const downloadViewChange = inview => {
+    if (!isDownloadVisible && inview) {
+      setIsDownloadVisible(true);
+    }
+  };
+
+  const sectionOneDownloadVariants = {
     hidden: {
       opacity: 0,
     },
@@ -32,7 +41,7 @@ const Info = () => {
           className={infoStyles.sectionOneInfo}
           initial="hidden"
           animate="visible"
-          variants={variants}
+          variants={sectionOneDownloadVariants}
           transition={{ delay: 1, duration: 1.5 }}
         >
           <h1>Loop - Habit Tracker</h1>
@@ -46,7 +55,7 @@ const Info = () => {
         <motion.div
           initial="hidden"
           animate="visible"
-          variants={variants}
+          variants={sectionOneDownloadVariants}
           transition={{ delay: 3, duration: 1.5 }}
         >
           <Carousel {...carouselSettings} className={infoStyles.imageSequence}>
@@ -159,44 +168,53 @@ const Info = () => {
         </div>
       </div>
 
-      <div className={infoStyles.sectionFour} id="download">
-        <h1>Download</h1>
-        <div className={infoStyles.sectionFourLinks}>
-          <a
-            href="https://play.google.com/store/apps/details?id=org.isoron.uhabits&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-AC-global-none-all-co-pr-py-PartBadges-Oct1515-1"
-            alt="Play Store icon"
-            className={infoStyles.sectionFourLink}
-          >
-            <img
-              alt="Get it on Google Play"
-              src="https://play.google.com/intl/en_us/badges/images/apps/en-play-badge-border.png"
-              width="200px"
-            />
-          </a>
-
-          <a
-            href="http://f-droid.org/app/org.isoron.uhabits"
-            alt="F-Droid icon"
-            className={infoStyles.sectionFourLink}
-          >
-            <img
-              alt="Get it on F-Droid"
-              src="http://i.imgur.com/baSPE7X.png"
-              width="200px"
-            />
-          </a>
-          <div className={infoStyles.sectionFourLink}>
-            <GitHubButton
-              href="https://github.com/iSoron/uhabits"
-              data-size="large"
-              data-show-count="true"
-              aria-label="Star iSoron/uhabits on GitHub"
+      <InView as="div" onChange={(inView, entry) => downloadViewChange(inView)}>
+        <motion.div
+          className={infoStyles.sectionFour}
+          id="download"
+          animate={isDownloadVisible ? 'visible' : 'hidden'}
+          variants={sectionOneDownloadVariants}
+          initial="hidden"
+          transition={{ delay: 1, duration: 1.5 }}
+        >
+          <h1>Download</h1>
+          <div className={infoStyles.sectionFourLinks}>
+            <a
+              href="https://play.google.com/store/apps/details?id=org.isoron.uhabits&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-AC-global-none-all-co-pr-py-PartBadges-Oct1515-1"
+              alt="Play Store icon"
+              className={infoStyles.sectionFourLink}
             >
-              Star
-            </GitHubButton>
+              <img
+                alt="Get it on Google Play"
+                src="https://play.google.com/intl/en_us/badges/images/apps/en-play-badge-border.png"
+                width="200px"
+              />
+            </a>
+
+            <a
+              href="http://f-droid.org/app/org.isoron.uhabits"
+              alt="F-Droid icon"
+              className={infoStyles.sectionFourLink}
+            >
+              <img
+                alt="Get it on F-Droid"
+                src="http://i.imgur.com/baSPE7X.png"
+                width="200px"
+              />
+            </a>
+            <div className={infoStyles.sectionFourLink}>
+              <GitHubButton
+                href="https://github.com/iSoron/uhabits"
+                data-size="large"
+                data-show-count="true"
+                aria-label="Star iSoron/uhabits on GitHub"
+              >
+                Star
+              </GitHubButton>
+            </div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </InView>
     </div>
   );
 };
