@@ -9,6 +9,20 @@ import infoStyles from './styles.module.scss';
 
 const Info = () => {
   const [isDownloadVisible, setIsDownloadVisible] = useState(false);
+  const [isSectionTwoVisible, setisSectionTwoVisible] = useState(false);
+  const [isSectionThreeVisible, setisSectionThreeVisible] = useState(false);
+
+  const sectionTwoViewChange = inview => {
+    if (!isSectionTwoVisible && inview) {
+      setisSectionTwoVisible(true);
+    }
+  };
+
+  const sectionThreeViewChange = inview => {
+    if (!isSectionThreeVisible && inview) {
+      setisSectionThreeVisible(true);
+    }
+  };
 
   const downloadViewChange = inview => {
     if (!isDownloadVisible && inview) {
@@ -16,13 +30,23 @@ const Info = () => {
     }
   };
 
-  const sectionOneDownloadVariants = {
+  const visibilityVariant = {
     hidden: {
       opacity: 0,
     },
     visible: {
       opacity: 1,
     },
+  };
+
+  const listVariant = {
+    visible: { opacity: 1 },
+    hidden: { opacity: 0 },
+  };
+
+  const itemVariant = {
+    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 1000 },
   };
 
   const carouselSettings = {
@@ -41,8 +65,8 @@ const Info = () => {
           className={infoStyles.sectionOneInfo}
           initial="hidden"
           animate="visible"
-          variants={sectionOneDownloadVariants}
-          transition={{ delay: 1, duration: 1.5 }}
+          variants={visibilityVariant}
+          transition={{ delay: 0.5, duration: 1.5 }}
         >
           <h1>Loop - Habit Tracker</h1>
           <h6 className={infoStyles.sectionOneInfoText}>
@@ -55,8 +79,8 @@ const Info = () => {
         <motion.div
           initial="hidden"
           animate="visible"
-          variants={sectionOneDownloadVariants}
-          transition={{ delay: 3, duration: 1.5 }}
+          variants={visibilityVariant}
+          transition={{ delay: 2.5, duration: 1.5 }}
         >
           <Carousel {...carouselSettings} className={infoStyles.imageSequence}>
             <div>
@@ -71,111 +95,159 @@ const Info = () => {
         </motion.div>
       </div>
 
-      <div className={infoStyles.sectionTwo}>
-        <div>
-          <Carousel {...carouselSettings} className={infoStyles.imageSequence}>
-            <div>
-              <img src="/uhabits3.png" alt="Screenshot 3 of app" />
-              <p className="legend3">Screenshot 3</p>
-            </div>
-            <div>
-              <img src="/uhabits4.png" alt="Screenshot 4 of app" />
-              <p className="legend4">Screenshot 4</p>
-            </div>
-          </Carousel>
+      <InView
+        as="div"
+        onChange={(inView, entry) => sectionTwoViewChange(inView)}
+      >
+        <div className={infoStyles.sectionTwo}>
+          <motion.div
+            initial="hidden"
+            animate={isSectionTwoVisible ? 'visible' : 'hidden'}
+            variants={visibilityVariant}
+            transition={{ delay: 1, duration: 1.5 }}
+          >
+            <Carousel
+              {...carouselSettings}
+              className={infoStyles.imageSequence}
+            >
+              <div>
+                <img src="/uhabits3.png" alt="Screenshot 3 of app" />
+                <p className="legend3">Screenshot 3</p>
+              </div>
+              <div>
+                <img src="/uhabits4.png" alt="Screenshot 4 of app" />
+                <p className="legend4">Screenshot 4</p>
+              </div>
+            </Carousel>
+          </motion.div>
+
+          <motion.div
+            initial="hidden"
+            animate={isSectionTwoVisible ? 'visible' : 'hidden'}
+            variants={listVariant}
+            transition={{ duration: 1 }}
+          >
+            <motion.div variants={itemVariant} transition={{ duration: 1.5 }}>
+              <div className={infoStyles.sectionTwoInfoCard}>
+                <h4>Simple, beautiful and modern interface</h4>
+                <p>
+                  Loop has a minimalistic interface that is easy to use and
+                  follows the material design guidelines.
+                </p>
+              </div>
+
+              <div className={infoStyles.sectionTwoInfoCard}>
+                <h4>Habit score</h4>
+                <p>
+                  In addition to showing your current streak, Loop has an
+                  advanced formula for calculating the strength of your habits.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div variants={itemVariant} transition={{ duration: 1 }}>
+              <div className={infoStyles.sectionTwoInfoCard}>
+                <h4>Detailed graphs and statistics</h4>
+                <p>
+                  Clearly see how your habits improved over time with beautiful
+                  and detailed graphs.
+                </p>
+              </div>
+
+              <div className={infoStyles.sectionTwoInfoCard}>
+                <h4>Flexible schedules</h4>
+                <p>
+                  Supports both daily habits and habits with more complex
+                  schedules, such as 3 times every week; one time every other
+                  week; or every other day.
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
         </div>
+      </InView>
 
-        <div>
-          <div>
-            <div className={infoStyles.sectionTwoInfoCard}>
-              <h4>Simple, beautiful and modern interface</h4>
+      <InView
+        as="div"
+        onChange={(inView, entry) => sectionThreeViewChange(inView)}
+      >
+        <div className={infoStyles.sectionThree}>
+          <motion.div
+            initial="hidden"
+            animate={isSectionThreeVisible ? 'visible' : 'hidden'}
+            variants={listVariant}
+            transition={{ duration: 1 }}
+          >
+            <motion.div
+              className={infoStyles.sectionThreeInfoCard}
+              variants={itemVariant}
+              transition={{ duration: 1.5 }}
+            >
+              <h4>Reminders</h4>
               <p>
-                Loop has a minimalistic interface that is easy to use and
-                follows the material design guidelines.
+                Create an individual reminder for each habit, at a chosen hour
+                of the day. Easily check, dismiss or snooze your habit directly
+                from the notification, without opening the app.
               </p>
-            </div>
+            </motion.div>
 
-            <div className={infoStyles.sectionTwoInfoCard}>
-              <h4>Habit score</h4>
+            <motion.div
+              className={infoStyles.sectionThreeInfoCard}
+              variants={itemVariant}
+              transition={{ duration: 1.5 }}
+            >
+              <h4>Optimized for smartwatches</h4>
               <p>
-                In addition to showing your current streak, Loop has an advanced
-                formula for calculating the strength of your habits.
+                Reminders can be checked or dismissed directly from your Android
+                Wear watch.
               </p>
-            </div>
-          </div>
+            </motion.div>
 
-          <div>
-            <div className={infoStyles.sectionTwoInfoCard}>
-              <h4>Detailed graphs and statistics</h4>
+            <motion.div
+              className={infoStyles.sectionThreeInfoCard}
+              variants={itemVariant}
+              transition={{ duration: 1.5 }}
+            >
+              <h4>Completely ad-free and open source</h4>
               <p>
-                Clearly see how your habits improved over time with beautiful
-                and detailed graphs.
+                There are absolutely no advertisements, annoying notifications
+                or intrusive permissions in this app, and there will never be.
+                Complete source code is on GitHub.
               </p>
-            </div>
+            </motion.div>
+          </motion.div>
 
-            <div className={infoStyles.sectionTwoInfoCard}>
-              <h4>Flexible schedules</h4>
-              <p>
-                Supports both daily habits and habits with more complex
-                schedules, such as 3 times every week; one time every other
-                week; or every other day.
-              </p>
-            </div>
-          </div>
+          <motion.div
+            initial="hidden"
+            animate={isSectionThreeVisible ? 'visible' : 'hidden'}
+            variants={visibilityVariant}
+            transition={{ delay: 1, duration: 1.5 }}
+          >
+            <Carousel
+              {...carouselSettings}
+              className={infoStyles.imageSequence}
+            >
+              <div>
+                <img src="/uhabits5.png" alt="Screenshot 5 of app" />
+                <p className="legend5">Screenshot 5</p>
+              </div>
+              <div>
+                <img src="/uhabits6.png" alt="Screenshot 6 of app" />
+                <p className="legend6">Screenshot 6</p>
+              </div>
+            </Carousel>
+          </motion.div>
         </div>
-      </div>
-
-      <div className={infoStyles.sectionThree}>
-        <div>
-          <div className={infoStyles.sectionThreeInfoCard}>
-            <h4>Reminders</h4>
-            <p>
-              Create an individual reminder for each habit, at a chosen hour of
-              the day. Easily check, dismiss or snooze your habit directly from
-              the notification, without opening the app.
-            </p>
-          </div>
-
-          <div className={infoStyles.sectionThreeInfoCard}>
-            <h4>Optimized for smartwatches</h4>
-            <p>
-              Reminders can be checked or dismissed directly from your Android
-              Wear watch.
-            </p>
-          </div>
-
-          <div className={infoStyles.sectionThreeInfoCard}>
-            <h4>Completely ad-free and open source</h4>
-            <p>
-              There are absolutely no advertisements, annoying notifications or
-              intrusive permissions in this app, and there will never be.
-              Complete source code is on GitHub.
-            </p>
-          </div>
-        </div>
-
-        <div>
-          <Carousel {...carouselSettings} className={infoStyles.imageSequence}>
-            <div>
-              <img src="/uhabits5.png" alt="Screenshot 5 of app" />
-              <p className="legend5">Screenshot 5</p>
-            </div>
-            <div>
-              <img src="/uhabits6.png" alt="Screenshot 6 of app" />
-              <p className="legend6">Screenshot 6</p>
-            </div>
-          </Carousel>
-        </div>
-      </div>
+      </InView>
 
       <InView as="div" onChange={(inView, entry) => downloadViewChange(inView)}>
         <motion.div
           className={infoStyles.sectionFour}
           id="download"
           animate={isDownloadVisible ? 'visible' : 'hidden'}
-          variants={sectionOneDownloadVariants}
+          variants={visibilityVariant}
           initial="hidden"
-          transition={{ delay: 1, duration: 1.5 }}
+          transition={{ delay: 0.5, duration: 1.5 }}
         >
           <h1>Download</h1>
           <div className={infoStyles.sectionFourLinks}>
