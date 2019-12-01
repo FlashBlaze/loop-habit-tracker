@@ -264,13 +264,13 @@ const Info = () => {
             </a>
 
             <a
-              href="http://f-droid.org/app/org.isoron.uhabits"
+              href="https://f-droid.org/app/org.isoron.uhabits"
               alt="F-Droid icon"
               className={infoStyles.sectionFourLink}
             >
               <img
                 alt="Get it on F-Droid"
-                src="http://i.imgur.com/baSPE7X.png"
+                src="https://i.imgur.com/baSPE7X.png"
                 width="200px"
               />
             </a>
