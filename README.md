@@ -4,4 +4,4 @@ Static website created for [Loop Habit Tracker](https://github.com/iSoron/uhabit
 
 Currently the website is hosted on [Now](https://zeit.co/home)
 
-:rocket: View here: [Loop- Habit Tracker](https://www.youtube.com/watch?v=kdcdVVyizio) :rocket:
+:rocket: View here: [Loop- Habit Tracker](https://loop-habit-tracker.now.sh/) :rocket:
