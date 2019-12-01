@@ -8,6 +8,18 @@ module.exports = {
         pathToConfigModule: `src/utils/typography`,
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Loop - Habit Tracker`,
+        short_name: `Loop - Habit Tracker`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#ffffff`,
+        display: `standalone`,
+        icon: `static/icon.png`,
+      },
+    },
   ],
   pathPrefix: '/loop-habit-tracker',
 };
