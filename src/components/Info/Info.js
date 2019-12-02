@@ -258,7 +258,7 @@ const Info = () => {
             >
               <img
                 alt="Get it on Google Play"
-                src="https://play.google.com/intl/en_us/badges/images/apps/en-play-badge-border.png"
+                src="/play_store_logo.png"
                 width="200px"
               />
             </a>
@@ -270,7 +270,7 @@ const Info = () => {
             >
               <img
                 alt="Get it on F-Droid"
-                src="https://i.imgur.com/baSPE7X.png"
+                src="/f_droid_logo.png"
                 width="200px"
               />
             </a>
