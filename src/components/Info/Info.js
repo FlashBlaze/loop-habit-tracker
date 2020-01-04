@@ -66,7 +66,7 @@ const Info = () => {
           initial="hidden"
           animate="visible"
           variants={visibilityVariant}
-          transition={{ delay: 0.5, duration: 1 }}
+          transition={{ delay: 0.3, duration: 1 }}
         >
           <h1>Loop - Habit Tracker</h1>
           <h6 className={infoStyles.sectionOneInfoText}>
@@ -80,7 +80,7 @@ const Info = () => {
           initial="hidden"
           animate="visible"
           variants={visibilityVariant}
-          transition={{ delay: 2, duration: 1 }}
+          transition={{ delay: 0.3, duration: 1 }}
         >
           <Carousel {...carouselSettings} className={infoStyles.imageSequence}>
             <div>
@@ -181,7 +181,7 @@ const Info = () => {
             <motion.div
               className={infoStyles.sectionThreeInfoCard}
               variants={itemVariant}
-              transition={{ duration: 1.5 }}
+              transition={{ duration: 1.3 }}
             >
               <h4>Reminders</h4>
               <p>
@@ -194,7 +194,7 @@ const Info = () => {
             <motion.div
               className={infoStyles.sectionThreeInfoCard}
               variants={itemVariant}
-              transition={{ duration: 1.5 }}
+              transition={{ duration: 1.3 }}
             >
               <h4>Optimized for smartwatches</h4>
               <p>
@@ -206,7 +206,7 @@ const Info = () => {
             <motion.div
               className={infoStyles.sectionThreeInfoCard}
               variants={itemVariant}
-              transition={{ duration: 1.5 }}
+              transition={{ duration: 1.3 }}
             >
               <h4>Completely ad-free and open source</h4>
               <p>
@@ -221,7 +221,7 @@ const Info = () => {
             initial="hidden"
             animate={isSectionThreeVisible ? 'visible' : 'hidden'}
             variants={visibilityVariant}
-            transition={{ delay: 1, duration: 1.5 }}
+            transition={{ duration: 1.3 }}
           >
             <Carousel
               {...carouselSettings}
@@ -247,7 +247,7 @@ const Info = () => {
           animate={isDownloadVisible ? 'visible' : 'hidden'}
           variants={visibilityVariant}
           initial="hidden"
-          transition={{ delay: 0.5, duration: 1.5 }}
+          transition={{ duration: 1.3 }}
         >
           <h1>Download</h1>
           <div className={infoStyles.sectionFourLinks}>
