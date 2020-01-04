@@ -228,7 +228,7 @@ const Info = () => {
               className={infoStyles.imageSequence}
             >
               <div>
-                <img src="/uhabits5.png" alt="Screenshot 5 of app" />
+                <img src="/uhabits5.jpg" alt="Screenshot 5 of app" />
                 <p className="legend5">Screenshot 5</p>
               </div>
               <div>

@@ -11,6 +11,7 @@ const Head = () => {
           name="description"
           content="Landing page for Loop - Habit Tracker"
         />
+        <html lang="en" />
         <meta name="author" content="Neeraj Lagwankar" />
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />

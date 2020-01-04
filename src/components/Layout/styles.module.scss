@@ -1,11 +1,15 @@
 @font-face {
   font-family: 'Roboto Monospace';
-  src: url('../../fonts/RobotoMono-Regular.ttf');
+  src: local('Roboto Mono'), local('RobotoMono-Regular'),
+    url('../../fonts/roboto-mono-v7-latin-regular.woff') format('woff');
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Roboto';
-  src: url('../../fonts/Roboto-Regular.ttf');
+  src: local('Roboto Regular'), local('Roboto-Regular'),
+    url('../../fonts/roboto-v20-latin-regular.woff') format('woff');
+  font-display: swap;
 }
 
 h1,
